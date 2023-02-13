@@ -9,10 +9,7 @@ jobs:
   pages:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@a81bbbf8298c0fa03ea29cdc473d45769f953675
-        with:
-          lfs: true
-          token: ${{ secrets.ACCESS_TOKEN }}
+      - uses: actions/checkout@2.3.4
       - name: Use Node.js 18.x
         uses: actions/setup-node@v2
         with:
