@@ -9,17 +9,7 @@ jobs:
   pages:
     runs-on: ubuntu-latest
     steps:
-      -
-        if: github.event.pull_request.head.repo.full_name == github.repository
-        uses: actions/checkout@v2
-        with:
-            # Must be used to trigger workflow after push
-            token: ${{ secrets.ACCESS_TOKEN }}
-
-    # in forks, the token is not available - so we cannot us eit
-      -
-        if: github.event.pull_request.head.repo.full_name != github.repository
-        uses: actions/checkout@v2
+      - uses: actions/checkout@a81bbbf8298c0fa03ea29cdc473d45769f953675
       - name: Use Node.js 18.x
         uses: actions/setup-node@v2
         with:
